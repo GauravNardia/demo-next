@@ -8,6 +8,16 @@ export default function Home() {
       <Link href="/features">Features</Link>
       <Link href="/about">About</Link>
       <Link href="/pricing">Pricing</Link>
+
+      <button onClick={() => {
+        fetch("/api/health")
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
+      }}>
+        Health Check
+      </button>
     </div>
   );
 }
